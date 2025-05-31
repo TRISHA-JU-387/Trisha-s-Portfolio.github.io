@@ -139,13 +139,19 @@ ul {
 }
 
 /* Footer */
+/* Footer */
 footer {
   text-align: center;
-    padding: 20px;
+  padding: 20px;
   background: #1f2937;
   color: #fff;
   margin-top: 50px;
 
+  transition: none !important;
+  animation: none !important;
+}
+
+footer span {
   transition: none !important;
   animation: none !important;
 }
