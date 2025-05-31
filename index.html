@@ -1,73 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sabia Akter Trisha - Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Navigation Bar -->
   <header>
     <nav class="navbar">
       <div class="logo">Trisha</div>
       <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#" onclick="showSection('home')">Home</a></li>
+        <li><a href="#" onclick="showSection('about')">About</a></li>
+        <li><a href="#" onclick="showSection('projects')">Projects</a></li>
+        <li><a href="#" onclick="showSection('skills')">Skills</a></li>
+        <li><a href="#" onclick="showSection('contact')">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Home Section -->
-  <section id="home" class="section home">
+  <!-- Sections -->
+  <div id="home" class="section">
     <div class="home-content">
-      <img src="trisha.jpg" alt="Sabia Akter Trisha" class="profile-pic">
-      <h2>Hello, I'm Sabia Akter Trisha</h2>
+      <img src="trisha.jpg" alt="Sabia Akter Trisha" class="profile-pic" />
+      <h3>Hello, I'm Sabia Akter Trisha</h3>
       <p><i></i>A passionate CSE student at Jahangirnagar University</i></p>
     </div>
-  </section>
+  </div>
 
-  <!-- About Section -->
-  <section id="about" class="section">
+  <div id="about" class="section hidden">
     <h2>About Me</h2>
-    <p>I'm a CSE undergraduate student (Session 2021-2022) at Jahangirnagar University. I love Competitive Programming, Web Development, and AI-based projects. Member of JU CSE Programming Club, JU AI Society, and JU Women in Tech.</p>
-  </section>
+    <p>I'm a CSE undergraduate student (Session 2021-2022) at Jahangirnagar University. 
+      I love Competitive Programming, Web Development, and AI-based projects. Member of JU CSE Programming Club.</p>
+  </div>
 
-  <!-- Projects Section -->
-  <section id="projects" class="section">
+  <div id="projects" class="section hidden">
     <h2>Projects</h2>
     <ul>
-      <li><strong>Online Voting System</strong> - Java Swing based app</li>
-      <li><strong>Emotion Detector</strong> - AI-based face & voice analysis</li>
-      <li><strong>Anonymous Messaging App</strong> - Secure and private messaging</li>
-      <li><strong>AI Career Recommendation</strong> - Suggests career based on user profile</li>
+      <li>Online Voting System</li>
+      <li>Normal Calculator Using C</li>
+      <li>Make a Presentation in Prezy app</li>
+      <li> JU Admission system Using Mysql </li>
+      <li< FASTAPI in MySQL Project </li>
+        <li> 5 volt 12 A power supply PDB Design Using EasyEDA Simulator</li>
     </ul>
-  </section>
+  </div>
 
-  <!-- Skills Section -->
-  <section id="skills" class="section">
+  <div id="skills" class="section hidden">
     <h2>Skills</h2>
     <ul>
-      <li>C++, Python, Java</li>
+            <li>C++, Python, Java</li>
       <li>HTML, CSS, JavaScript, Flask</li>
       <li>MySQL, Git, LaTeX</li>
       <li>Java Swing, JavaFX</li>
-    </ul>
-  </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="section">
+    </ul>
+  </div>
+
+  <div id="contact" class="section hidden">
     <h2>Contact Me</h2>
     <p>Email: satrisha123@gmail.com</p>
-    <p>GitHub: <a href="https://github.com/sabiatrisha" target="_blank">github.com/sabiatrisha</a></p>
-    <p>Codeforces: <a href="https://codeforces.com/profile/Sabia123Trisha" target="_blank">Sabia123Trisha</a></p>
-  </section>
+    <p>GitHub: <a href="https://github.com/sabiatrisha">github.com/sabiatrisha</a></p>
+    <p>Codeforces: <a href="https://codeforces.com/profile/Sabia123Trisha">Sabia123Trisha</a></p>
+  </div>
 
   <footer>
     <p>&copy; 2025 Sabia Akter Trisha</p>
   </footer>
+
+  <script>
+    let currentSection = document.getElementById('home');
+
+    function showSection(id) {
+      if (currentSection.id === id) return;
+
+      const nextSection = document.getElementById(id);
+
+      currentSection.classList.add('fade-out');
+      currentSection.classList.remove('fade-in');
+
+      nextSection.classList.remove('hidden');
+      nextSection.classList.add('fade-in');
+
+      setTimeout(() => {
+        currentSection.classList.add('hidden');
+        currentSection.classList.remove('fade-out');
+        currentSection = nextSection;
+      }, 500); // match with CSS animation duration
+    }
+
+    window.onload = () => {
+      showSection('home');
+    };
+  </script>
 </body>
 </html>
