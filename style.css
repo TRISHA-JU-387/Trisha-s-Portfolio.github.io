@@ -141,12 +141,11 @@ ul {
 /* Footer */
 footer {
   text-align: center;
- 
+    padding: 20px;
   background: #1f2937;
   color: #fff;
   margin-top: 50px;
-}
-footer span, footer p {
+
   transition: none !important;
   animation: none !important;
 }
