@@ -65,9 +65,15 @@
     <p>Codeforces: <a href="https://codeforces.com/profile/Sabia123Trisha">Sabia123Trisha</a></p>
   </div>
 
+ 
   <footer>
-    <p>&copy; 2025 Sabia Akter Trisha</p>
-  </footer>
+  <p>© <span id="year"></span> Sabia Akter Trisha</p>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
 
   <script>
     let currentSection = document.getElementById('home');
