@@ -146,3 +146,7 @@ footer {
   color: #fff;
   margin-top: 50px;
 }
+footer span, footer p {
+  transition: none !important;
+  animation: none !important;
+}
