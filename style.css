@@ -155,3 +155,7 @@ footer span {
   transition: none !important;
   animation: none !important;
 }
+.no-animation {
+  animation: none !important;
+  transition: none !important;
+}
